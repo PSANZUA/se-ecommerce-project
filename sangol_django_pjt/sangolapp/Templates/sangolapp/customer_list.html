@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+
+</head>
+<body>
+    <h1>Customer List</h1>
+    <ul>
+        {% for customer in customers %}
+        <li>
+            <a href="{% url 'sangolapp:customer_detail' customer.pk %}">Customer Details: 
+                {{ customer.first_name }} {{ customer.last_name }} ({{ customer.email }})
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+<!-- {% comment %}<a href ="{% url'sangolapp:customer_list'%}" class="back-link"> Back to Customer List</a> {% endcomment %} -->
+</html>
